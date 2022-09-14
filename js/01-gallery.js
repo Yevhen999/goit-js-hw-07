@@ -26,26 +26,15 @@ onGalleryRef.insertAdjacentHTML("beforeend", createdGallery);
 onGalleryRef.addEventListener("click", handleRef);
 
 function handleRef(evt) {
+  event.preventDefault();
+  const instance = basicLightbox.create(
+    `<img width="1400" height="900" src="${evt.target.dataset.source}" />
+	`
+  );
   if (evt.target.nodeName !== "IMG") {
     return;
   } else {
+    instance.show();
   }
 }
-
-function onImageHandle() {
-  basicLightbox
-    .create(`<img width="1400" height="900" src="${item.original}">`)
-    .show();
-}
-
-onImageHandle();
-
-// document.querySelector("button.image").onclick = () => {
-//   basicLightbox
-//     .create(
-//       `
-// 		<img width="1400" height="900" src="${item.original}">
-// 	`
-//     )
-//     .show();
-// };
+// instance.show();
