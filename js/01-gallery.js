@@ -37,4 +37,3 @@ function handleRef(evt) {
     instance.show();
   }
 }
-// instance.show();
