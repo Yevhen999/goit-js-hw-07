@@ -13,10 +13,8 @@ const createdGalleryItem = galleryItems.map((item) => {
 
 const createdGallery = createdGalleryItem.join("");
 onGalleryRef.insertAdjacentHTML("beforeend", createdGallery);
-onGalleryRef.addEventListener(
-  "click",
-  new SimpleLightbox(".gallery a", {
-    captionDelay: 250,
-    captionData: "alt",
-  })
-);
+
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionDelay: 250,
+  captionData: "alt",
+});

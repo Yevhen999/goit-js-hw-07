@@ -27,13 +27,13 @@ onGalleryRef.addEventListener("click", handleRef);
 
 function handleRef(evt) {
   event.preventDefault();
+  if (evt.target.nodeName !== "IMG") {
+    return;
+  }
   const instance = basicLightbox.create(
     `<img width="1400" height="900" src="${evt.target.dataset.source}" />
 	`
   );
-  if (evt.target.nodeName !== "IMG") {
-    return;
-  } else {
-    instance.show();
-  }
+
+  instance.show();
 }
